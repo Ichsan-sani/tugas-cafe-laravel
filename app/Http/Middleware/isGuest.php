@@ -14,16 +14,11 @@ class isGuest
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-        // Kalau ada login boleh akses
-        if (Auth::check() && Auth::user()->role == 'admin') {
-            return redirect('landing-page')->with('failed', 'Anda telah login, tidak bisa kembali');
-        } else {
-            // Kalau belum login balikin ke login
-            return $next($request);
+        if (Auth::check()) {
+            return redirect()->route('showProduct')->with('failed', 'Tidak Memiliki Akses');
         }
-
-        return redirect()->route('/')->with('error', 'Tidak memiliki akses');
+        return $next($request);
     }
 }

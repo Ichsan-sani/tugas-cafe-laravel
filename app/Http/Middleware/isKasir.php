@@ -16,7 +16,7 @@ class isKasir
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!Auth::check() || Auth::user()->role != 'kasir'){
+        if (!Auth::check() || Auth::user()->role != 'kasir') {
             return redirect()->back()->with('failed', 'Tidak Memiliki Akses');
         }
         return $next($request);

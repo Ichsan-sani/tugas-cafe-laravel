@@ -20,7 +20,6 @@ class isLogin
         if (Auth::check()) {
             return $next($request);
         } else {
-            // Kalau belum login balikin ke login
             return redirect()->route('login')->with('failed', 'Silahkan login terlebih dahulu');
         }
     }

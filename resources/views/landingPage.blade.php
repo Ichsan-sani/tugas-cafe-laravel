@@ -1,9 +1,14 @@
 @extends('templates.app')
 
 @section('content-dinamis')
+    @if (Session::get('access'))
+        <div class="alert alert-danger">
+            {{ Session::get('access') }}</div>
+    @endif
     <section id="home" class="hero">
         <div class="container text-center text-white position-relative" style="z-index: 1;">
-            <h1 class="display-3 fw-bold mb-4">Selamat Datang di Cafe Moderna</h1>
+            <h1 class="display-3 fw-bold mb-4">Selamat Datang di Cafe Modern
+            </h1>
             <p class="lead mb-5">Rasakan Sentuhan Masa Depan dalam Setiap Tegukan</p>
             <a href="#menu" class="btn btn-modern">Jelajahi Menu</a>
         </div>
@@ -13,30 +18,23 @@
         <div class="container">
             <h2 class="text-center mb-5 fade-in">Menu Kami</h2>
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card fade-in">
-                        <img src="{{ asset('image/cof.jpg') }}" class="card-img" alt="Quantum Latte">
-                        <div class="card-img-overlay d-flex flex-column justify-content-end text-white">
-                            <h5 class="card-title">Quantum Latte</h5>
-                            <p class="card-text">Espresso futuristik dengan susu nano-infused</p>
+                @foreach ($products as $item)
+                    <div class="col-md-4">
+                        <div class="card fade-in">
+                            <img src="https://placehold.co/600?text=Contoh" class="card-img" alt="Quantum Latte">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end text-white">
+                                <h5 class="card-title">{{ $item->name }}</h5>
+                                <p class="card-text">{{ $item->description }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
                 <div class="col-md-4">
                     <div class="card fade-in">
                         <img src="{{ asset('image/cof.jpg') }}" class="card-img" alt="Quantum Latte">
                         <div class="card-img-overlay d-flex flex-column justify-content-end text-white">
                             <h5 class="card-title">Nebula Croissant</h5>
                             <p class="card-text">Croissant dengan lapisan rasa galaksi</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card fade-in">
-                        <img src="{{ asset('image/cof.jpg') }}" class="card-img" alt="Quantum Latte">
-                        <div class="card-img-overlay d-flex flex-column justify-content-end text-white">
-                            <h5 class="card-title">Levitating Salad</h5>
-                            <p class="card-text">Salad yang seolah melayang di piring Anda</p>
                         </div>
                     </div>
                 </div>
