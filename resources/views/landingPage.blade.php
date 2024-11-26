@@ -1,295 +1,372 @@
 @extends('templates.app')
 
-@section('content-dinamis')
-    @if (Session::get('access'))
-        <div class="alert alert-danger">
-            {{ Session::get('access') }}</div>
-    @endif
-    <section id="home" class="hero">
-        <div class="container text-center text-white position-relative" style="z-index: 1;">
-            <h1 class="display-3 fw-bold mb-4">Selamat Datang di Cafe Modern
-            </h1>
-            <p class="lead mb-5">Rasakan Sentuhan Masa Depan dalam Setiap Tegukan</p>
-            <a href="#menu" class="btn btn-modern">Jelajahi Menu</a>
-        </div>
-
-    </section>
-    <section id="menu" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 fade-in">Menu Kami</h2>
-            <div class="row g-4">
-                @foreach ($products as $item)
-                    <div class="col-md-4">
-                        <div class="card fade-in">
-                            <img src="https://placehold.co/600?text=Contoh" class="card-img" alt="Quantum Latte">
-                            <div class="card-img-overlay d-flex flex-column justify-content-end text-white">
-                                <h5 class="card-title">{{ $item->name }}</h5>
-                                <p class="card-text">{{ $item->description }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-                <div class="col-md-4">
-                    <div class="card fade-in">
-                        <img src="{{ asset('image/cof.jpg') }}" class="card-img" alt="Quantum Latte">
-                        <div class="card-img-overlay d-flex flex-column justify-content-end text-white">
-                            <h5 class="card-title">Nebula Croissant</h5>
-                            <p class="card-text">Croissant dengan lapisan rasa galaksi</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg"
-                alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" alt="">
-        </div>
-    </div>
-
-
-    <section id="about" class="py-5 parallax" style="background-image: url('/api/placeholder/1920/1080');">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 fade-in">
-                    <h2 class="mb-4 text-gray-799">Tentang Cafe Moderna</h2>
-                    <p class="text-gray-799">Cafe Moderna adalah titik temu antara tradisi kopi dan teknologi masa depan.
-                        Kami
-                        menghadirkan pengalaman kuliner yang tak terlupakan dengan sentuhan inovasi di setiap sajian.</p>
-                    <p class="text-gray-799">Dengan barista robot kami yang presisi dan chef AI yang kreatif, kami
-                        berkomitmen
-                        untuk memberikan citarasa terdepan dalam dunia kopi dan kuliner.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 fade-in">Hubungi Kami</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8 fade-in">
-                    <form>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Nama">
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Email">
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Pesan"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-modern w-100">Kirim Pesan</button>
-                    </form>
-                </div>
-            </div>
-            <div class="row mt-5 text-center">
-                <div class="col-md-4 fade-in">
-                    <i class="fas fa-map-marker-alt fa-3x mb-3"></i>
-                    <p>Jl. Futuristik No. 2077, Neo Jakarta</p>
-                </div>
-                <div class="col-md-4 fade-in">
-                    <i class="fas fa-phone fa-3x mb-3"></i>
-                    <p>+62 8888 9999 2077</p>
-                </div>
-                <div class="col-md-4 fade-in">
-                    <i class="fas fa-envelope fa-3x mb-3"></i>
-                    <p>hello@cafemoderna.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p>&copy; 2077 Cafe Moderna. Semua hak cipta dilindungi.</p>
-            <div class="mt-3">
-                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </footer>
-@endsection
-
 @push('style')
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: green;
-            --secondary-color: #f8f9fa;
-            --accent-color: rgb(87, 245, 87);
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #2c3e50;
+            --bg-light: #ecf0f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
             overflow-x: hidden;
+            background-color: var(--bg-light);
         }
 
-        .navbar {
-            transition: all 0.5s ease;
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.8);
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .navbar-brand,
-        .nav-link {
-            color: var(--primary-color) !important;
+        @keyframes floatAnimation {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
         }
 
-        .hero {
-            height: 70vh;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            display: flex;
-            align-items: center;
-            overflow: hidden;
+        /* Swiper Home Slider */
+        .swiper-home {
+            height: 100vh;
+            color: white;
             position: relative;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.2' d='M0,32L48,80C96,128,192,224,288,229.3C384,235,480,149,576,128C672,107,768,149,864,170.7C960,192,1056,192,1152,170.7C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
-            animation: wave 20s linear infinite;
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
         }
 
-        @keyframes wave {
-            0% {
-                transform: translateX(0) translateY(0) rotate(0);
-            }
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            100% {
-                transform: translateX(-50%) translateY(0) rotate(0);
+        .slide-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Menu Section */
+        #menu {
+            background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
+            padding: 80px 0;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            height: 100%;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-card-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-card-img img {
+            transition: transform 0.5s ease;
+        }
+
+        .menu-card:hover .menu-card-img img {
+            transform: scale(1.1);
+        }
+
+        .menu-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            padding: 15px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-card:hover .menu-card-overlay {
+            opacity: 1;
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                gap: 30px;
             }
+        }
+
+        /* Utility Classes */
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .btn-modern {
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            border: none;
+            background: var(--accent-color);
             color: white;
-            padding: 15px 30px;
+            border: none;
+            padding: 12px 30px;
             border-radius: 50px;
-            font-weight: bold;
-            text-transform: uppercase;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-modern:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
-        }
-
-        .card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px) rotate(2deg);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-img-overlay {
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-        }
-
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        #contact {
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            color: white;
-        }
-
-        .form-control {
-            border-radius: 20px;
-            border: none;
-            padding: 15px 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
     </style>
 @endpush
 
+@section('content-dinamis')
+    @if (Session::get('access'))
+        <div class="alert alert-danger">{{ Session::get('access') }}</div>
+    @endif
+
+    <!-- Home Slider -->
+    <section class="swiper swiper-home">
+        <div class="swiper-wrapper text-white">
+            <div class="swiper-slide"
+                style="background-image: url('https://img.freepik.com/free-vector/restaurant-mural-wallpaper_52683-47493.jpg')">
+                <div class="slide-overlay">
+                    <div class="slide-content text-center">
+                        <h1 class="display-3 fw-bold text-shadow mb-4">
+                            <i class="ri-cup-line me-3 icon-animated"></i>
+                            Cafe Moderna
+                        </h1>
+                        <p class="lead mb-5 text-shadow">Teknologi Bertemu Tradisi dalam Setiap Tegukan</p>
+                        <a href="#menu" class="btn btn-modern btn-lg text-white">
+                            Jelajahi Menu
+                            <i class="ri-arrow-right-line ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide"
+                style="background-image: url('https://img.freepik.com/free-vector/realistic-coffee-time-background-with-coffee-cup_79603-1559.jpg?semt=ais_hybrid')">
+                <div class="slide-overlay">
+                    <div class="slide-content text-center">
+                        <h1 class="display-3 fw-bold text-shadow mb-4">
+                            <i class="ri-robot-line me-3 icon-animated"></i>
+                            Inovasi Tanpa Batas
+                        </h1>
+                        <p class="lead mb-5 text-shadow">Pengalaman Kopi Masa Depan</p>
+                        <a href="#about" class="btn btn-modern btn-lg text-white">
+                            Tentang Kami
+                            <i class="ri-information-line ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="text-uppercase text-muted fw-bold mb-2">Specialty of The House</p>
+                <h2 class="display-5 fw-bold">Koleksi Menu Kami</h2>
+            </div>
+            <div class="row g-4">
+                @foreach ($products as $item)
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="menu-card h-100">
+                            <div class="menu-card-img position-relative">
+                                <img src="{{ asset($item['img']) }}" class="img-fluid w-100" alt="{{ $item->name }}">
+                                <div class="menu-card-overlay">
+                                    <h5 class="text-white mb-2">{{ $item->name }}</h5>
+                                    <p class="small text-white-50">{{ $item->description }}</p>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h5 class="fw-bold mb-3">{{ $item->name }}</h5>
+                                <p class="text-muted small mb-3">{{ $item->description }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">Rp {{ number_format($item->price, 0, ',', '.') }}</span>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        Order
+                                        <i class="ri-shopping-cart-line ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image d-flex flex-shrink-0 col-md-6 justify-content-center">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/010/847/929/small/international-day-of-coffee-background-coffee-cup-logo-free-vector.jpg"
+                        class="img-fluid" alt="Cafe Moderna Interior">
+                </div>
+                <div class="about-text">
+                    <h2 class="display-5 fw-bold mb-4">Tentang Cafe Moderna</h2>
+                    <p class="lead mb-4">
+                        Cafe Moderna adalah revolusi kuliner yang memadukan tradisi kopi Indonesia
+                        dengan teknologi masa depan. Kami tidak sekadar menyajikan minuman,
+                        tetapi menciptakan pengalaman yang melampaui batas konvensional.
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="d-flex align-items-center">
+                                <i class="ri-robot-line fa-3x me-3 text-accent"></i>
+                                <span>Robot Barista Canggih</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-flex align-items-center">
+                                <i class="ri-test-tube-line fa-3x me-3 text-accent"></i>
+                                <span>Teknik Brewing Inovatif</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-flex align-items-center">
+                                <i class="ri-earth-line fa-3x me-3 text-accent"></i>
+                                <span>Sumber Bahan Lokal</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-modern mt-4">
+                        Hubungi Kami
+                        <i class="ri-arrow-right-line ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+
 @push('script')
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.padding = '5px 0';
-                navbar.style.backgroundColor = 'rgba(255,255,255,0.95)';
-            } else {
-                navbar.style.padding = '20px 0';
-                navbar.style.backgroundColor = 'rgba(255,255,255,0.8)';
-            }
+        // Home Slider Initialization
+        new Swiper('.swiper-home', {
+            effect: 'fade',
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
         });
 
-        // Smooth scrolling
+        // Scroll Reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollReveal = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const revealObserver = new IntersectionObserver(scrollReveal, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            });
+
+            document.querySelectorAll('.fade-in, .menu-card, .about-content').forEach(section => {
+                revealObserver.observe(section);
+            });
+        });
+
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -297,26 +374,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Fade-in effect
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Parallax effect
-        window.addEventListener('scroll', function() {
-            const parallax = document.querySelector('.parallax');
-            let scrollPosition = window.pageYOffset;
-            parallax.style.backgroundPositionY = scrollPosition * 0.7 + 'px';
         });
     </script>
 @endpush

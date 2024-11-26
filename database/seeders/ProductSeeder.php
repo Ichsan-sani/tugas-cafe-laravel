@@ -17,6 +17,7 @@ class ProductSeeder extends Seeder
             'name' => 'Kopi Hitam',
             'description' => 'Kopi hitam pekat dengan aroma khas',
             'type' => 'Minuman',
+            'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBhZxudbRGpnwGASvemp5l_wr6uy1l2RR0cQ&s',
             'price' => 12000,
             'stock' => rand(0, 50),
         ]);
@@ -25,72 +26,73 @@ class ProductSeeder extends Seeder
             'name' => 'Latte',
             'description' => 'Kopi susu lembut dengan foam di atasnya',
             'type' => 'Minuman',
+            'img' => 'https://i.pinimg.com/control/564x/fd/ee/be/fdeebe1bfef26991ef76700af3845030.jpg',
             'price' => 18000,
             'stock' => rand(0, 50),
         ]);
 
-        Product::create([
-            'name' => 'Es Teh Manis',
-            'description' => 'Teh segar dengan gula cair',
-            'type' => 'Minuman',
-            'price' => 8000,
-            'stock' => rand(0, 50),
-        ]);
+        // Product::create([
+        //     'name' => 'Es Teh Manis',
+        //     'description' => 'Teh segar dengan gula cair',
+        //     'type' => 'Minuman',
+        //     'price' => 8000,
+        //     'stock' => rand(0, 50),
+        // ]);
 
-        Product::create([
-            'name' => 'Cappuccino',
-            'description' => 'Perpaduan espresso, susu, dan busa susu',
-            'type' => 'Minuman',
-            'price' => 20000,
-            'stock' => rand(0, 50),
-        ]);
+        // Product::create([
+        //     'name' => 'Cappuccino',
+        //     'description' => 'Perpaduan espresso, susu, dan busa susu',
+        //     'type' => 'Minuman',
+        //     'price' => 20000,
+        //     'stock' => rand(0, 50),
+        // ]);
 
-        Product::create([
-            'name' => 'Brownies Coklat',
-            'description' => 'Brownies lembut dengan coklat pekat',
-            'type' => 'Makanan',
-            'price' => 15000,
-            'stock' => rand(0, 50),
-        ]);
+        // Product::create([
+        //     'name' => 'Brownies Coklat',
+        //     'description' => 'Brownies lembut dengan coklat pekat',
+        //     'type' => 'Makanan',
+        //     'price' => 15000,
+        //     'stock' => rand(0, 50),
+        // ]);
 
-        Product::create([
-            'name' => 'Roti Bakar Keju',
-            'description' => 'Roti bakar dengan isian keju lumer',
-            'type' => 'Makanan',
-            'price' => 12000,
-            'stock' => rand(0, 50),
-        ]);
+        // Product::create([
+        //     'name' => 'Roti Bakar Keju',
+        //     'description' => 'Roti bakar dengan isian keju lumer',
+        //     'type' => 'Makanan',
+        //     'price' => 12000,
+        //     'stock' => rand(0, 50),
+        // ]);
 
-        Product::create([
-            'name' => 'Matcha Latte',
-            'description' => 'Minuman matcha dengan susu segar',
-            'type' => 'Minuman',
-            'price' => 22000,
-            'stock' => rand(0, 50),
-        ]);
+        // Product::create([
+        //     'name' => 'Matcha Latte',
+        //     'description' => 'Minuman matcha dengan susu segar',
+        //     'type' => 'Minuman',
+        //     'price' => 22000,
+        //     'stock' => rand(0, 50),
+        // ]);
 
-        Product::create([
-            'name' => 'Spaghetti Carbonara',
-            'description' => 'Spaghetti dengan saus creamy dan bacon',
-            'type' => 'Makanan',
-            'price' => 30000,
-            'stock' => rand(0, 50),
-        ]);
+        // Product::create([
+        //     'name' => 'Spaghetti Carbonara',
+        //     'description' => 'Spaghetti dengan saus creamy dan bacon',
+        //     'type' => 'Makanan',
+        //     'price' => 30000,
+        //     'stock' => rand(0, 50),
+        // ]);
 
-        Product::create([
-            'name' => 'Pancake Coklat',
-            'description' => 'Pancake lembut dengan topping coklat',
-            'type' => 'Makanan',
-            'price' => 18000,
-            'stock' => rand(0, 50),
-        ]);
+        // Product::create([
+        //     'name' => 'Pancake Coklat',
+        //     'description' => 'Pancake lembut dengan topping coklat',
+        //     'type' => 'Makanan',
+        //     'price' => 18000,
+        //     'stock' => rand(0, 50),
+        // ]);
 
-        Product::create([
-            'name' => 'Green Tea Frappe',
-            'description' => 'Minuman dingin dengan rasa green tea khas',
-            'type' => 'Minuman',
-            'price' => 25000,
-            'stock' => rand(0, 50),
-        ]);
+        // Product::create([
+        //     'name' => 'Green Tea Frappe',
+        //     'description' => 'Minuman dingin dengan rasa green tea khas',
+        //     'type' => 'Minuman',
+        //     'price' => 25000,
+        //     'stock' => rand(0, 50),
+        // ]);
     }
 }

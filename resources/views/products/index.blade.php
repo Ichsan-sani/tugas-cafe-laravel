@@ -18,6 +18,7 @@
                 <thead>
                     <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                         <th class="py-3 px-6 text-left">No</th>
+                        <th class="py-3 px-6 text-left">Img</th>
                         <th class="py-3 px-6 text-left">Nama Product</th>
                         <th class="py-3 px-6 text-left">Harga</th>
                         <th class="py-3 px-6 text-left">Stock</th>
@@ -33,6 +34,14 @@
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     {{ ($products->currentPage() - 1) * $products->perPage() + ($index + 1) }}
                                 </td>
+                                <td class="py-3 px-6 text-left">
+                                    @php
+                                        // dd($product['img']);
+                                    @endphp
+                                    <img src="{{ asset($product['img']) }}" alt="Product Image"
+                                        class="w-10 h-10 object-cover rounded-full">
+                                </td>
+
                                 <td class="py-3 px-6 text-left">{{ $product['name'] }}</td>
                                 <td class="py-3 px-6 text-left">{{ $product['price'] }}</td>
                                 <td class="py-3 px-6 text-left">{{ $product['stock'] }}</td>
